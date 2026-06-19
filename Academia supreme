@@ -1,0 +1,280 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>IronFitness - Academia & Treino</title>
+    <style>
+        /* --- ESTILOS (CSS) --- */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Arial', sans-serif;
+            scroll-behavior: smooth;
+        }
+
+        body {
+            background-color: #111;
+            color: #fff;
+        }
+
+        header {
+            background-color: #000;
+            padding: 20px 50px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            position: fixed;
+            width: 100%;
+            z-index: 1000;
+            border-bottom: 2px solid #ff4a4a;
+        }
+
+        .logo {
+            font-size: 24px;
+            font-weight: bold;
+            letter-spacing: 2px;
+        }
+
+        .logo span {
+            color: #ff4a4a;
+        }
+
+        nav a {
+            color: #fff;
+            text-decoration: none;
+            margin-left: 20px;
+            font-weight: 500;
+            transition: color 0.3s;
+        }
+
+        nav a:hover {
+            color: #ff4a4a;
+        }
+
+        .hero {
+            height: 100vh;
+            background: linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.8)), 
+                        url('https://unsplash.com') no-repeat center center/cover;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            padding: 20px;
+        }
+
+        .hero-content h1 {
+            font-size: 50px;
+            margin-bottom: 20px;
+            text-transform: uppercase;
+        }
+
+        .hero-content p {
+            font-size: 18px;
+            margin-bottom: 30px;
+            max-width: 600px;
+            color: #ccc;
+        }
+
+        .btn {
+            display: inline-block;
+            background-color: #ff4a4a;
+            color: #fff;
+            padding: 12px 30px;
+            text-decoration: none;
+            font-weight: bold;
+            border-radius: 5px;
+            transition: background 0.3s;
+            border: none;
+            cursor: pointer;
+        }
+
+        .btn:hover {
+            background-color: #ff1f1f;
+        }
+
+        .cards-section {
+            padding: 100px 50px;
+            text-align: center;
+        }
+
+        .cards-section h2 {
+            font-size: 36px;
+            margin-bottom: 40px;
+            text-transform: uppercase;
+        }
+
+        .cards-container {
+            display: flex;
+            justify-content: center;
+            gap: 30px;
+            flex-wrap: wrap;
+        }
+
+        .card {
+            background-color: #222;
+            border-radius: 10px;
+            overflow: hidden;
+            width: 300px;
+            text-align: left;
+            border: 1px solid #333;
+            transition: transform 0.3s;
+        }
+
+        .card:hover {
+            transform: translateY(-10px);
+        }
+
+        .card img {
+            width: 100%;
+            height: 200px;
+            object-fit: cover;
+        }
+
+        .card h3 {
+            padding: 20px 20px 10px 20px;
+            color: #ff4a4a;
+        }
+
+        .card p {
+            padding: 0 20px 20px 20px;
+            color: #bbb;
+            font-size: 14px;
+            line-height: 1.5;
+        }
+
+        .timer-section {
+            background-color: #1a1a1a;
+            padding: 80px 20px;
+            text-align: center;
+        }
+
+        .timer-section h2 {
+            font-size: 36px;
+            margin-bottom: 10px;
+        }
+
+        .timer-display {
+            font-size: 80px;
+            font-weight: bold;
+            margin: 30px 0;
+            color: #ff4a4a;
+            font-family: monospace;
+        }
+
+        .timer-controls button {
+            margin: 0 10px;
+        }
+
+        .btn-success { background-color: #28a745; }
+        .btn-warning { background-color: #ffc107; color: #000; }
+        .btn-danger { background-color: #dc3545; }
+
+        footer {
+            background-color: #000;
+            text-align: center;
+            padding: 20px;
+            border-top: 1px solid #222;
+            color: #666;
+        }
+    </style>
+</head>
+<body>
+
+    <!-- --- ESTRUTURA (HTML) --- -->
+    <header>
+        <div class="logo">IRON<span>FITNESS</span></div>
+        <nav>
+            <a href="#home">Home</a>
+            <a href="#modalidades">Modalidades</a>
+            <a href="#treino">Treino Livre</a>
+        </nav>
+    </header>
+
+    <section id="home" class="hero">
+        <div class="hero-content">
+            <h1>Supere Seus Limites Diariamente</h1>
+            <p>Treinos focados, ambiente de ponta e suporte profissional para transformar seu corpo e mente.</p>
+            <a href="#modalidades" class="btn">Começar Agora</a>
+        </div>
+    </section>
+
+    <section id="modalidades" class="cards-section">
+        <h2>Nossas Modalidades</h2>
+        <div class="cards-container">
+            <div class="card">
+                <img src="https://unsplash.com" alt="Musculação">
+                <h3>Musculação</h3>
+                <p>Equipamentos modernos para hipertrofia e ganho de força.</p>
+            </div>
+            <div class="card">
+                <img src="https://unsplash.com" alt="Treino Funcional">
+                <h3>Funcional</h3>
+                <p>Melhore sua agilidade, condicionamento e queime calorias.</p>
+            </div>
+            <div class="card">
+                <img src="https://unsplash.com" alt="Yoga e Flexibilidade">
+                <h3>Yoga & Alongamento</h3>
+                <p>Foco na flexibilidade, mente equilibrada e postura.</p>
+            </div>
+        </div>
+    </section>
+
+    <section id="treino" class="timer-section">
+        <h2>Cronômetro de Treino Livre</h2>
+        <p>Use nosso timer para controlar suas séries e tempos de descanso.</p>
+        <div class="timer-display" id="display">00:00</div>
+        <div class="timer-controls">
+            <button onclick="iniciarTimer()" class="btn btn-success">Iniciar</button>
+            <button onclick="pausarTimer()" class="btn btn-warning">Pausar</button>
+            <button onclick="resetarTimer()" class="btn btn-danger">Resetar</button>
+        </div>
+    </section>
+
+    <footer>
+        <p>&copy; 2026 IronFitness. Todos os direitos reservados.</p>
+    </footer>
+
+    <!-- --- COMPORTAMENTO (JAVASCRIPT) --- -->
+    <script>
+        let tempo;
+        let segundos = 0;
+        let minutos = 0;
+        let rodando = false;
+
+        function iniciarTimer() {
+            if (!rodando) {
+                rodando = true;
+                tempo = setInterval(atualizarDisplay, 1000);
+            }
+        }
+
+        function pausarTimer() {
+            clearInterval(tempo);
+            rodando = false;
+        }
+
+        function resetarTimer() {
+            clearInterval(tempo);
+            rodando = false;
+            segundos = 0;
+            minutos = 0;
+            document.getElementById('display').innerText = "00:00";
+        }
+
+        function atualizarDisplay() {
+            segundos++;
+            if (segundos === 60) {
+                segundos = 0;
+                minutos++;
+            }
+
+            let minFormatado = minutos < 10 ? "0" + minutos : minutos;
+            let segFormatado = segundos < 10 ? "0" + segundos : segundos;
+
+            document.getElementById('display').innerText = `${minFormatado}:${segFormatado}`;
+        }
+    </script>
+</body>
+</html>
